@@ -149,7 +149,7 @@
 
   .image-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center; /* Center vertically */
     height: 100vh; /* Adjust the height of the container as needed */
   }
