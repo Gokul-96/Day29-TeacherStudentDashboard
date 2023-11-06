@@ -1,11 +1,155 @@
-.toggled {
-    overflow: visible;
-    width: 6.5rem !important;
-}
-
-.toggled1 {
-    width: 0 !important;
-    overflow: hidden;
-}
 
 
+.App {
+    text-align: center;
+    opacity: 1;
+  }
+  
+  .title{
+    width: auto;
+    padding: 12px;
+    font-size: 25px;
+    font-weight: bolder;
+    font-style: normal;
+    font-family: 'Times New Roman';
+    background-color: rgb(21, 73, 92);
+    color: white;
+  
+  }
+  .nav-styles{
+    padding: 27px;
+    width: auto;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: Cambria;
+    font-size: 30px;
+    background-color: rgb(59, 64, 44);
+    display: flex;
+    justify-content: flex-start;
+    gap : 1rem;
+  }
+  .nav-btn{
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: Cambria;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .nav-btn:hover{
+    background-color: salmon;
+    color: white;
+  }
+  footer{
+    
+    bottom: 0;
+    padding: 12px;
+    font-size: large;
+    width: 100%;
+    color: white;
+    
+    background-color: rgb(51, 51, 51);
+  
+  }
+  .user-content{
+    margin: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 10px;
+  }
+  
+  .btn{
+    border-radius: 5px;
+    padding: 12px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: Cambria;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-style: italic;
+  }
+  .edit-btn:hover{
+    background-color: cornflowerblue;
+    color: white;
+  }
+  .dele-btn:hover{
+    background-color: crimson;
+    color: white;
+  }
+  .view-btn:hover{
+    background-color: palevioletred;
+    color: white;
+  }
+  .add-btn:hover{
+    background-color: blueviolet;
+    color: white;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 0.5px solid #ffffff;
+    text-align: center;
+    padding: 8px;
+    font-size: 18px;
+    font-family: Cambria;
+    font-style: italic;
+    
+  }
+  
+  th {
+    background-color: rgb(250, 117, 239);
+    font-weight: bolder;
+  }
+  
+  td {
+    background-color: rgb(205, 235, 253);
+  }
+  
+  form {
+    display: flex;
+    gap: 5px;
+  }
+  
+  form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  form * {
+    font-size: 20px;
+  }
+  
+  .worng-btn{
+    
+    font-family: 'Times New Roman';
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 20px;
+     
+  }
+  .worng-btn:hover{
+    background-color: salmon;
+    color: white;
+  }
+ 
+
+
+  .centered-image {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain the aspect ratio */
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Adjust the height of the container as needed */
+  }

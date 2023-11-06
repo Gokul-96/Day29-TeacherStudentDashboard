@@ -1,53 +1,68 @@
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Logoutmodel from "./components/Logoutmodel";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import Dashboard from "./components/Dashboard";
-import CreateTeacher from "./components/CreateTeacher";
-import CreateStudent from "./components/CreateStudent";
-import AddStudent from "./components/AddStudent";
-import AddTeacher from "./components/AddTeacher";
-import EditTeacher from "./components/EditTeacher";
-import EditStudent from "./components/EditStudent";
-import { AppContextProvider } from "./context/AppContext";
-import './App.css'
+import React from 'react';
+import {Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import TeachComponent from './Components/TeachComponent';
+import AddUser from './Components/AddUser';
+import UserComponent from './Components/UserComponent';
+import AddTeach from './Components/AddTeach';
+import { data } from './Data/Student';
+import { staff } from './Data/Teacher';
+import { useState } from 'react';
+import  Nopage  from './Components/NoPage';
+import UserDetails  from './Components/UserDetails';
+import  TeachDetails  from './Components/TeachDetails';
+import  EditUser  from './Components/EditUser';
+import  EditTeach  from './Components/EditTeach';
+
+import picture from './image/stud-teacher.jpg';
 
 function App() {
+  const [user, setUser] = useState(data);
+  const [teach, setTeach] = useState(staff);
+
+
   return (
-    <div id="page-top">
-        <AppContextProvider>
-        <Router>
-        <div id="wrapper" className="">
-            <Sidebar
-              Link={Link}
-            />
-              <Navbar />
-          
- {/* <!-- Content Wrapper --> */}
- <div id="content-wrapper" className="d-flex flex-column">
-              {/* <!-- Main Content -->*/}
-              <div id="content" className="#0dcaf0 text-center">
-<Routes>
-  <Route path ="/" element={<Dashboard />}/>
-  <Route path ="/Student" element={<CreateStudent />}/>
-  <Route path ="/Student/Add" element={<AddStudent />}/>
-  <Route path ="/Student/Edit" element={<EditStudent />}/>
-  <Route path ="/Teacher" element={<CreateTeacher />}/>
-  <Route path ="/Teacher/Add" element={<AddTeacher />}/>
-  <Route path ="/Teacher/Edit" element={<EditTeacher />}/>
-</Routes>
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home  />} />
+          <Route path="/Student" element={<UserComponent user={user} setUser={setUser} />} />
+          <Route path="/Teacher" element={<TeachComponent teach={teach} setTeach={setTeach} />} />
+          <Route path="/add/user" element={<AddUser user={user} setUser={setUser} />} />
+          <Route path="/add/teach" element={<AddTeach teach={teach} setTeach={setTeach} />} />
+          <Route path="/edit/:id" element={<EditUser user={user} setUser={setUser} />} />
+          <Route path="/edits/:id" element={<EditTeach teach={teach} setTeach={setTeach} />} />
+          <Route path="/user/:id" element={<UserDetails user={user} />} />
+          <Route path="/teach/:id" element={<TeachDetails teach={teach} />} />
+          <Route path="*" element={<Nopage />} />
+        </Routes>
+      </Router>
+    
+      <div className="image-container">
+  <img src={picture} alt="StudentTeacher" className="centered-image" />
 </div>
-     <Footer />
-     </div>
-     </div>
-     </Router>
-     
-     <Logoutmodel />
-        </AppContextProvider>
-     </div>
+    </div>
   );
 }
 
-export default App
+function Home() {
+  return (
+    <div className="nav-styles">
+      <span>
+        <Link to="/Student" className="nav-btn">
+          Student
+        </Link>
+      </span>
+      <span>
+        <Link to="/Teacher" className="nav-btn">
+          Teacher
+        </Link>
+      </span>
+     
+    </div>
+  );
+}
+
+
+export default App;
