@@ -11,7 +11,7 @@ import { staff } from './Data/Teacher';
 import { useState } from 'react';
 import  Nopage  from './Components/NoPage';
 import UserDetails  from './Components/UserDetails';
-import  TeachDetails  from './Components/TeachDetails';
+import TeachDetails from './Components/TeachDetails';
 import  EditUser  from './Components/EditUser';
 import  EditTeach  from './Components/EditTeach';
 
