@@ -1,10 +1,11 @@
-// vite.config.js
-import { defineConfig } from 'vite';
+import path from 'path'; // Import the 'path' module
 
-export default defineConfig({
+export default {
+  // ...rest of your Vite config...
+
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, 'src'), // Adjust the path as needed
     },
   },
-});
+};
